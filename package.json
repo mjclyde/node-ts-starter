@@ -1,0 +1,63 @@
+{
+  "name": "node-ts-starter",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode development ",
+    "build:watch": "webpack -w --mode development ",
+    "start": "node dist/app.bundle.js",
+    "test": "nyc mocha && nyc report --reporter=text",
+    "test:watch": "mocha --watch",
+    "deploy": "bash scripts/deploy.sh",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mclyde/node-ts-starter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mclyde/node-ts-starter/issues"
+  },
+  "homepage": "https://github.com/mclyde/node-ts-starter#readme",
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "commander": "^2.20.3",
+    "inquirer": "^7.0.4",
+    "lodash": "^4.17.15",
+    "rxjs": "^6.5.4",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.7",
+    "@types/inquirer": "^6.5.0",
+    "@types/mocha": "^5.2.6",
+    "@types/node": "^12.12.25",
+    "@types/sinon": "^7.5.1",
+    "chai": "^4.2.0",
+    "coveralls": "^3.0.9",
+    "mocha": "^6.2.2",
+    "mock-fs": "^4.10.4",
+    "nyc": "^14.1.0",
+    "sinon": "^7.5.0",
+    "ts-loader": "^5.4.5",
+    "ts-node": "^8.6.2",
+    "tslint": "^5.20.1",
+    "tslint-loader": "^3.5.4",
+    "typescript": "^3.7.5",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  },
+  "nyc": {
+    "extension": [
+      ".ts"
+    ],
+    "include": [],
+    "reporter": [
+      "lcovonly",
+      "text-summary"
+    ]
+  }
+}
